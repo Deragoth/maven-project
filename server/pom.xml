@@ -60,4 +60,8 @@
     </plugins>
   </reporting>
 
+<configuration>
+  <linkXRef>false</linkXRef>
+</configuration>
+
 </project>
