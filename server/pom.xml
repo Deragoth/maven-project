@@ -10,6 +10,10 @@
     <relativePath>../pom.xml</relativePath>
   </parent>
 
+  <properties>
+    <linkXRef>false</linkXRef>
+  </properties>
+
   <artifactId>server</artifactId>
   <packaging>jar</packaging>
   <name>Server</name>
@@ -59,9 +63,5 @@
         </plugin>
     </plugins>
   </reporting>
-
-<configuration>
-  <linkXRef>false</linkXRef>
-</configuration>
 
 </project>
