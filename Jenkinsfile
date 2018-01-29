@@ -27,13 +27,13 @@ stages{
             parallel{
                 stage ('Deploy to Staging'){
                     steps {
-                        sh "scp -i D:/Download/tomcat-demo.pem **/target/*.war admin@${params.tomcat_dev}:/webapps"
+                        bat "cp -i D:/Download/tomcat-demo.pem **/target/*.war admin@${params.tomcat_dev}:/webapps"
                     }
                 }
 
                 stage ("Deploy to Production"){
                     steps {
-                        sh "scp -i D:/Download/tomcat-demo.pem **/target/*.war ec2-user@${params.tomcat_prod}:/var/lib/tomcat7/webapps"
+                        bat "cp -i D:/Download/tomcat-demo.pem **/target/*.war ec2-user@${params.tomcat_prod}:/var/lib/tomcat7/webapps"
                     }
                 }
             }
