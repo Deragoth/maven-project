@@ -27,7 +27,7 @@ stages{
             parallel{
                 stage ('Deploy to Staging'){
                     steps {
-                        bat "cp -i D:/Download/tomcat-demo.pem **/target/*.war admin@${params.tomcat_dev}:/webapps"
+                        bat "copy -Y **/target/*.war D:/Software/apache-tomcat-8.5.24-staging/webapps"
                     }
                 }
 
