@@ -3,7 +3,7 @@ pipeline {
 
     parameters {
          string(name: 'tomcat_dev', defaultValue: 'localhost', description: 'Staging Server')
-         string(name: 'tomcat_prod', defaultValue: '13.58.42.118', description: 'Production Server')
+         string(name: 'tomcat_prod', defaultValue: '18.219.75.76', description: 'Production Server')
     }
 
     triggers {
@@ -33,7 +33,7 @@ stages{
 
                 stage ("Deploy to Production"){
                     steps {
-                        bat "cp -i D:/Download/tomcat-demo.pem **/target/*.war ec2-user@${params.tomcat_prod}:/var/lib/tomcat7/webapps"
+                        bat "copy 'C:/Program Files (x86)/Jenkins/workspace/FullyAutomated/webapp/target/webapp.war' ec2-user@${params.tomcat_prod}:/var/lib/tomcat7/webapps"
                     }
                 }
             }
