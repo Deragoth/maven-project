@@ -3,7 +3,7 @@ pipeline {
 
     parameters {
          string(name: 'tomcat_dev', defaultValue: 'localhost', description: 'Staging Server')
-         string(name: 'tomcat_prod', defaultValue: '18.219.75.76', description: 'Production Server')
+         string(name: 'tomcat_prod', defaultValue: 'ec2-18-219-75-76.us-east-2.compute.amazonaws.com', description: 'Production Server')
     }
 
     triggers {
@@ -33,7 +33,7 @@ stages{
 
                 stage ("Deploy to Production"){
                     steps {
-                        bat 'pscp -i "D:/Download/tomcat-demo.pem" "C:/Program Files (x86)/Jenkins/workspace/FullyAutomated/webapp/target/webapp.war" ec2-user@${params.tomcat_prod}:/var/lib/tomcat7/webapps'
+                        bat 'pscp -i "D:/Download/tomcat-demo.ppk" "C:/Program Files (x86)/Jenkins/workspace/FullyAutomated/webapp/target/webapp.war" ec2-user@18.219.75.76:/var/lib/tomcat7/webapps'
                     }
                 }
             }
