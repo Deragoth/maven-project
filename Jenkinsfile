@@ -33,7 +33,7 @@ stages{
 
                 stage ("Deploy to Production"){
                     steps {
-                        bat 'pscp -i "D:/Download/tomcat-demo.ppk" "C:/Program Files (x86)/Jenkins/workspace/FullyAutomated/webapp/target/webapp.war" ec2-user@18.219.75.76:/var/lib/tomcat7/webapps -hostkey 2c:7c:3d:cc:cf:41:40:61:d5:7b:3f:68:5d:9d:11:67'
+                        bat 'pscp -i "D:/Download/tomcat-demo.ppk" "C:/Program Files (x86)/Jenkins/workspace/FullyAutomated/webapp/target/webapp.war" ec2-user@18.219.75.76:/var/lib/tomcat7/webapps'
                     }
                 }
             }
